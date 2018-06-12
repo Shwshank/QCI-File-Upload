@@ -10,7 +10,7 @@
       <ul class="navbar-nav mr-auto">
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        Logout
+        <button class="btn btn-secondary" (click)="logout()" >Logout</button>
       </form>
     </div>
   </nav>
@@ -26,7 +26,7 @@
             <i class="fa fa-file-text-o fa-5x"></i>
           </span> <br><br>
           <div class="fileinput fileinput-new" data-provides="fileinput" >
-              <span class="btn  btn-file btn-primary" style="width:100% !important"><span>Upload File : </span><input type="file" (change)="uploadFile($event);" accept=".csv"/></span>
+              <span class="btn  btn-file btn-primary" style="width:100% !important"><span>Upload File : </span><input type="file" (change)="uploadFile($event);" /></span>
           </div>
         </div>
 

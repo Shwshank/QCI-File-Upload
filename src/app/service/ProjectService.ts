@@ -67,6 +67,7 @@ export class ProjectService {
 
   uploadFile(data) {
     this.apiService.UploadFile(data).subscribe(res=>{
+      console.log(res);
       if(res.success) {
 
         alert(res.msg);
@@ -78,8 +79,12 @@ export class ProjectService {
     })
   }
 
-  fileHistoryFun() {
-    this.emitFileHistory.emit(this.fileHistory);
+  getUploadHistory() {
+    this.apiService.GetUploadHistory().subscribe(res=>{
+        console.log(res);
+        this.emitFileHistory.emit(res.data);
+    })
+
   }
 
 }

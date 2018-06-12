@@ -10,7 +10,11 @@ export class APIService {
   constructor( private http: Http, ) {}
 
   UploadFile(data) {
-    return this.http.post(this.projectURL+'/uploadFile',data).map(res=>res.json());
+    return this.http.post(this.projectURL+'/uploadExcel', data).map(res=>res.json());
+  }
+
+  GetUploadHistory(data) {
+    return this.http.get(this.projectURL+'/getUploadHistory').map(res=>res.json());
   }
 
 }

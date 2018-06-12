@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projectService.fileHistoryFun();
+    this.projectService.getUploadHistory();
   }
 
   openURL(url) {
@@ -34,6 +34,10 @@ export class DashboardComponent implements OnInit {
       this.formData = new FormData();
       this.formData.append('file', file);
       this.projectService.uploadFile(this.formData);
+  }
+
+  logout() {
+    this.projectService.logout();
   }
 
 }
